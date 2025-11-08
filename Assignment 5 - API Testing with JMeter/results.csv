@@ -1,0 +1,6 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+POST - Create User,10,616,321,1461,371.51,0.000%,1.81159,2.35,0.44,1329.7
+GET - All Users,10,108,90,138,12.67,0.000%,2.40327,16.13,0.32,6871.0
+PUT - Update User,10,426,317,791,181.68,0.000%,2.28519,2.68,0.58,1201.2
+DELETE - Delete User ,10,326,314,345,8.46,0.000%,2.55754,2.97,0.56,1189.6
+TOTAL,40,369,90,1461,276.27,0.000%,6.37755,16.49,1.35,2647.9
