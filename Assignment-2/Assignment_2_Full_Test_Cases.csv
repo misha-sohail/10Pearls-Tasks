@@ -1,0 +1,107 @@
+Id,Title,Estimate,Priority,Type,Jira Refs,Github Refs,Azure Refs,Section,Smoke,Regression,Reviewed by QA Lead ,Reviewed by QA Manager,Reviewed by PM,To Automate,Automated,Module,To be Moved,Disabled,Steps(Expected),Steps(Steps),Test Data,Preconditions,Created By,Created On,Updated By,Updated On,Desc,Bdd_gherkin,Cucumber_tags,Milestone
+1,User Registration - valid data (desktop),2m,P1 - Must Test,Functional,,,,User Authentication,Yes,"1. Open registration page on desktop
+2. Enter valid name,email,password
+3. Click Register","User account created, confirmation email sent",Valid user data,User on registration page,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+2,User Registration - valid data (mobile),2m,P1 - Must Test,Functional,,,,User Authentication,Yes,"1. Open registration on mobile
+2. Enter valid data
+3. Tap Register",Account created and confirmation SMS/email,Valid mobile user data,User on mobile registration,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+3,User Registration - duplicate email,2m,P2 - Should Test,Negative,,,,User Authentication,No,"1. Try registering with an email already in use
+2. Submit",Error: Email already registered,Existing email,User on registration page,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+4,Login - valid credentials (desktop),2m,P1 - Must Test,Smoke,,,,User Authentication,Yes,"1. Open login page
+2. Enter valid credentials
+3. Click Login",User redirected to homepage/dashboard,Valid credentials,User account exists,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+5,Login - valid credentials (mobile),2m,P1 - Must Test,Smoke,,,,User Authentication,Yes,"1. Open login on mobile
+2. Enter credentials
+3. Tap Login",User logged in successfully,Valid mobile credentials,User account exists,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+6,Login - incorrect password,2m,P2 - Should Test,Negative,,,,User Authentication,No,"1. Enter valid email and wrong password
+2. Submit",Error message 'Invalid credentials',Wrong password,User account exists,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+7,Forgot Password flow,2m,P2 - Should Test,Functional,,,,User Authentication,No,"1. Click 'Forgot Password'
+2. Enter registered email
+3. Submit",Password reset email link sent,Registered email,User on login page,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+8,Session timeout after inactivity,2m,P2 - Should Test,Security,,,,User Authentication,No,"1. Login and stay inactive for 15 minutes
+2. Try to perform action",Session expired; user prompted to login again,Active session,User logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+9,Catalog listing - loads with pagination (desktop),1m,P1 - Must Test,Functional,,,,Book Catalog,Yes,"1. Open Catalog page on desktop
+2. Scroll first page
+3. Navigate to page 2","Books listed, pagination works",N/A,Catalog has books,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+10,Catalog listing - loads with infinite scroll (mobile),1m,P1 - Must Test,Functional,,,,Book Catalog,Yes,"1. Open Catalog on mobile
+2. Scroll down to load more items",More items load without full page refresh,N/A,Catalog has books,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+11,Book detail displays correct info,1m,P1 - Must Test,Functional,,,,Book Catalog,Yes,"1. Click a book from catalog
+2. Open detail page","Book shows title, author, price, description, stock",Existing book,Book exists in catalog,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+12,Filter by category and sort by price,1m,P2 - Should Test,Functional,,,,Book Catalog,No,"1. Apply category filter
+2. Sort by price low to high",Filtered and sorted results match criteria,Multiple categories present,Catalog populated,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+13,Thumbnail images load correctly,1m,P3 - Could Test,Usability,,,,Book Catalog,No,"1. Open catalog
+2. View thumbnails",Images load and are not broken,N/A,Catalog populated,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+14,Out of stock books marked correctly,1m,P2 - Should Test,Functional,,,,Book Catalog,No,1. Open a book detail that is out of stock,Display shows 'Out of stock' and disables Add to Cart,Out of stock book,Book exists and inventory zero,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+15,Search by title returns results (desktop),30s,P1 - Must Test,Functional,,,,Book Search,Yes,"1. Enter known title in search bar
+2. Click search",Relevant books matching title displayed,Known title keyword,Homepage,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+16,Search by author returns results (mobile),30s,P1 - Must Test,Functional,,,,Book Search,Yes,"1. On mobile, enter author name
+2. Tap search",Books by that author are shown,Author name,Homepage mobile,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+17,Search with autocomplete suggestions,30s,P2 - Should Test,Functional,,,,Book Search,No,"1. Start typing in search field
+2. Observe suggestions dropdown",Relevant suggestions appear,Partial title input,Homepage,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+18,Search no results scenario,30s,P3 - Could Test,Negative,,,,Book Search,No,1. Search for random string with no matches,Page shows 'No results found' and suggestions,Random text,Homepage,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+19,Search performance (response time),30s,P2 - Should Test,Performance,,,,Book Search,No,"1. Search for popular title
+2. Measure response time",Results returned within 2 seconds,Popular title,Homepage,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+20,Add to cart from detail page (desktop),1m,P1 - Must Test,Smoke,,,,Shopping Cart,Yes,"1. Open desktop book detail
+2. Click Add to Cart",Item added and cart count increments,Available book,User logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+21,Add to cart from listing page (mobile),1m,P1 - Must Test,Smoke,,,,Shopping Cart,Yes,"1. On mobile, tap 'Add to Cart' on listing
+2. Observe cart",Item added and cart icon updated,Available book,User logged in mobile,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+22,Update quantity in cart,1m,P2 - Should Test,Functional,,,,Shopping Cart,No,"1. Go to cart
+2. Change quantity and update",Cart total recalculated correctly,Item present in cart,Cart has item,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+23,Remove item from cart,1m,P2 - Should Test,Regression,,,,Shopping Cart,No,"1. Go to cart
+2. Click remove on item
+3. Confirm",Item removed and total updated,Item present in cart,Cart has item,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+24,Cart persists after logout/login,1m,P3 - Could Test,Functional,,,,Shopping Cart,No,"1. Add item to cart
+2. Logout and login again
+3. Check cart",Cart retains the item after login,User account,User logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+25,Apply discount code (valid/invalid),1m,P2 - Should Test,Functional,,,,Shopping Cart,No,"1. Enter valid coupon code at cart
+2. Apply
+3. Also test invalid code",Valid code applies discount; invalid code shows error,Valid & invalid coupons,Cart has items,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+26,Checkout with valid card (desktop),2m,P1 - Must Test,Regression,,,,Checkout & Payment,Yes,"1. Proceed to checkout
+2. Enter valid billing/shipping
+3. Enter card details
+4. Submit",Order placed; confirmation displayed and email sent,Valid card details,Cart not empty,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+27,Checkout with valid card (mobile),2m,P1 - Must Test,Regression,,,,Checkout & Payment,Yes,"1. On mobile, proceed to checkout
+2. Enter details and pay",Order placed successfully and mobile confirmation shown,Valid mobile card,Cart not empty,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+28,Checkout with expired card,2m,P2 - Should Test,Negative,,,,Checkout & Payment,No,"1. Enter expired card details
+2. Submit",Payment declined with proper error message,Expired card,Cart not empty,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+29,Shipping address validation,2m,P2 - Should Test,Functional,,,,Checkout & Payment,No,"1. Enter invalid address details
+2. Try to proceed",Validation errors shown; cannot proceed,Invalid address format,Checkout page,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+30,Order summary correctness,2m,P2 - Should Test,Functional,,,,Checkout & Payment,No,1. Review order summary before payment,"Order summary shows correct item, quantity, taxes, shipping",Cart items known,Checkout page,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+31,Email confirmation content check,2m,P3 - Could Test,Functional,,,,Checkout & Payment,No,"1. After successful order, open confirmation email","Email contains order id, summary, delivery estimate",Successful order,Email inbox,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+32,Payment gateway timeout handling,2m,P2 - Should Test,Performance,,,,Checkout & Payment,No,"1. Simulate slow gateway
+2. Attempt payment",User sees timeout message and can retry,Simulated slow response,Checkout page,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+33,Edit profile info (desktop),1m,P2 - Should Test,Functional,,,,User Account & Orders,No,"1. Login
+2. Go to profile
+3. Edit name/email
+4. Save",Profile saved and reflects changes,New profile data,User logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+34,Change password flow,1m,P2 - Should Test,Functional,,,,User Account & Orders,No,"1. Go to change password
+2. Enter old & new password
+3. Save",Password updated; re-login with new password works,Old & new passwords,User logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+35,View order history,1m,P2 - Should Test,Functional,,,,User Account & Orders,No,"1. Go to My Orders
+2. View past orders list",List displays past orders with statuses,User has orders,User logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+36,Cancel order within allowed window,1m,P3 - Could Test,Functional,,,,User Account & Orders,No,"1. Open recent order
+2. If allowed, click Cancel
+3. Confirm",Order cancelled and status updated,Order cancellable,Order placed recently,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+37,Admin add new book (desktop),2m,P1 - Must Test,Functional,,,,Admin Management,No,"1. Admin login
+2. Go to Add Book
+3. Enter details
+4. Save",Book added and visible in catalog,New book info,Admin logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+38,Admin edit book details,2m,P2 - Should Test,Functional,,,,Admin Management,No,"1. Admin selects book
+2. Edit fields
+3. Save",Changes reflected in catalog,Updated data,Admin logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+39,Admin delete book,2m,P2 - Should Test,Regression,,,,Admin Management,No,"1. Admin selects book
+2. Delete and confirm",Book removed from catalog,Existing book,Admin logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+40,Admin manage user roles,2m,P3 - Could Test,Functional,,,,Admin Management,No,"1. Admin opens user list
+2. Change role to admin/user
+3. Save",User role updated and permissions reflect change,Existing user,Admin logged in,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+41,HTTPS enforced on all pages,varies,P1 - Must Test,Security,,,,Security & Performance,No,"1. Open site pages
+2. Verify URL begins with https://",All sensitive pages use HTTPS,N/A,Any,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+42,Password stored hashed in DB,varies,P1 - Must Test,Security,,,,Security & Performance,No,1. Inspect DB storage for user passwords (admin access),Passwords are hashed; not stored in plain text,DB access,Admin access required,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+43,Load test - 1000 concurrent users,varies,P1 - Must Test,Performance,,,,Security & Performance,No,"1. Run load test simulation with 1000 virtual users
+2. Monitor response times/errors",System handles load within SLA (acceptable error rate),Load test tool,Test environment,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+44,Responsive layout check (mobile portrait),varies,P2 - Should Test,Usability,,,,Security & Performance,No,"1. Open site on mobile portrait
+2. Verify layout and navigation",UI adapts correctly and is usable,Mobile device,Any,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+45,Responsive layout check (mobile landscape),varies,P2 - Should Test,Usability,,,,Security & Performance,No,"1. Open site on mobile landscape
+2. Verify layout",UI adapts correctly,Mobile device landscape,Any,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
+46,Error handling displays user-friendly messages,varies,P2 - Should Test,Functional,,,,Security & Performance,No,"1. Force 500 server error
+2. Observe displayed message",User sees friendly error page with retry option,Simulated server error,Any,Misha Sohail,2025-10-08 06:19:13,Misha Sohail,2025-10-08 06:19:13,,,,Milestone 1,,,,,,,,,
